@@ -1,0 +1,71 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    .container {
+        height: 8.8rem;
+        @include flex(row, center, space-between);
+        nav{
+            ul {
+                @include flex(row, center, space-between);
+                margin-left: 5.9rem;
+                li {
+                    margin-left: 4.8rem;
+                    a {
+                        font-family: Poppins;
+                        font-weight: 500;
+                        font-size: 1.6rem;
+                        line-height: 125%;
+                        color: $white;
+                        transition: color .3s ease;
+                        &:hover {
+                            color: $brand-yellow;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .btn-mobile {
+            display:none;
+            background: transparent;
+        }
+        
+        @include responsive(1185px) {
+            nav {
+                ul {
+                    margin-left: 3rem;
+                    li {
+                        margin-left: 2.5rem;
+                    }
+                }
+            }
+        }
+        @include responsive(991px) {
+            .logo {
+                max-width: 108px;
+            }
+            nav {
+                ul {
+                    display: none;
+                }
+            }
+            .btn-secondary {
+                margin-left: auto;
+            }
+            .btn-mobile {
+                display: block;
+            }
+        }
+        @include responsive(525px) {
+            height: 7.3rem;
+            .btn-secondary {
+                display: none;
+            }
+        }
+    }
+    
+}
