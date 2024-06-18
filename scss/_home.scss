@@ -23,7 +23,6 @@
         ul {
             @include flex(row, center, space-between);
             margin-top: 6.4rem;
-            // width: 100%;
             max-width: 62,1rem;
             li {
                 display: flex;
@@ -175,6 +174,22 @@
             }
         }
     }
+    @include responsive(630px) {
+        .container {
+            .text {
+                ul {
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    li {
+                        .icon {
+                            width: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @include responsive(375px) {
         height: 80rem;
         margin-bottom: 20px;
@@ -871,6 +886,18 @@ footer {
     }
     @include responsive(600px) {
         .container {
+            .top {
+                flex-direction: column;
+                gap: 30px;
+                .share {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 30px;
+                    ul {
+                        margin: 0;
+                    }
+                }
+            }
             .main {
                 nav {
                     display: grid;
